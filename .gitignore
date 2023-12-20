@@ -1,0 +1,15 @@
+# virtual env
+/venv/
+
+# idea
+.idea/
+.DS_Store
+
+*.py[cod]
+.tox/
+
+.assets/
+
+*.css
+*.html
+*.xml
