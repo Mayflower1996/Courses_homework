@@ -5,34 +5,34 @@ from AtomCounter import AtomCounter
 class TestAtomCounter(unittest.TestCase):
     def test_count_atoms_positive(self):
         # Test a simple molecular formula
-        formula = "H2O"
+        formula = 'H2O'
         counter = AtomCounter(formula)
         expected_atoms = {'H': 2, 'O': 1}
         self.assertEqual(counter.count_atoms(), expected_atoms)
 
         # Test a more complex molecular formula
-        formula = "C6H12O6"
+        formula = 'C6H12O6'
         counter = AtomCounter(formula)
         expected_atoms = {'C': 6, 'H': 12, 'O': 6}
         self.assertEqual(counter.count_atoms(), expected_atoms)
 
         # Test a formula with nested parentheses
-        formula = "Na3(Fe(CN)6)2"
+        formula = 'Na3(Fe(CN)6)2'
         counter = AtomCounter(formula)
         expected_atoms = {'Na': 3, 'Fe': 2, 'C': 12, 'N': 12}
         self.assertEqual(counter.count_atoms(), expected_atoms)
 
     def test_count_atoms_negative(self):
         # Test an invalid formula with missing closing parenthesis
-        formula = "Na3(Fe(CN)6"
+        formula = 'Na3(Fe(CN)6'
         counter = AtomCounter(formula)
         self.assertRaises(IndexError, counter.count_atoms)
 
         # Test an invalid formula with invalid characters
-        formula = "C6H12O@6"
+        formula = 'C6H12O@6'
         counter = AtomCounter(formula)
         self.assertRaises(ValueError, counter.count_atoms)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

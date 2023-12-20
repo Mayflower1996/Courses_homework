@@ -1,7 +1,7 @@
-# Задание 1 "Строки с заданным символом"
+# Задание 1 'Строки с заданным символом'
 
 def remove_previous_char(s):
-    index = s.find("#")
+    index = s.find('#')
     if index != -1:
         if index == 0:
             s = s[1:]
@@ -12,12 +12,12 @@ def remove_previous_char(s):
         return s
 
 
-string = input("Введите строку: ")
+string = input('Введите строку: ')
 
 print(remove_previous_char(string))
 
 
-# Задание 2 "Рекурсия"
+# Задание 2 'Рекурсия'
 
 def countdown(n):
     if n < 1:
@@ -31,9 +31,9 @@ def countdown(n):
 
 while True:
     try:
-        n = int(input("Введите число n: "))
+        n = int(input('Введите число n: '))
         countdown(n)
         break
     except ValueError:
-        print("Введено некорректное значение. Пожалуйста, введите число.")
+        print('Введено некорректное значение. Пожалуйста, введите число.')
         continue

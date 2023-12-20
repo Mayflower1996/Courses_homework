@@ -1,4 +1,4 @@
-# Задание 1 "Validate":
+# Задание 1 'Validate':
 
 def validate(card_number):
     if not card_number.isdigit():
@@ -28,11 +28,11 @@ def validate(card_number):
 
 
 while True:
-    card_number = input("Введите номер карты (может быть длиной от 7 до 19 цифр): ")
+    card_number = input('Введите номер карты (может быть длиной от 7 до 19 цифр): ')
     card_number = card_number.strip()
 
     if not card_number.isdigit():
-        print("Ошибка! Введите только цифры.")
+        print('Ошибка! Введите только цифры.')
         continue
 
     result = validate(card_number)
@@ -40,10 +40,10 @@ while True:
     break
 
 
-# Задание 2 "Подсчет количества букв"
+# Задание 2 'Подсчет количества букв'
 
 def compress_string(string):
-    compressed = ""
+    compressed = ''
     count = 1
     for i in range(len(string)):
         if i == len(string) - 1 or string[i] != string[i + 1]:
@@ -57,6 +57,6 @@ def compress_string(string):
     return compressed
 
 
-input_string = input("Введите строку: ")
+input_string = input('Введите строку: ')
 compressed_string = compress_string(input_string)
-print("Сжатая строка:", compressed_string)
+print('Сжатая строка:', compressed_string)

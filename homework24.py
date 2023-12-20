@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 browser = webdriver.Chrome()
 
 # Открываем страницу с логином
-browser.get("https://thinking-tester-contact-list.herokuapp.com/")
+browser.get('https://thinking-tester-contact-list.herokuapp.com/')
 sleep(2)
 
 # Открываем страницу с регистрацией - не нужно, если вы уже зарегистрированы
@@ -93,11 +93,11 @@ firstName = browser.find_element(By.ID, 'firstName')
 sleep(1)
 firstName.clear()
 sleep(1)
-firstName.send_keys('Ivann')
+firstName.send_keys('Ivan')
 lastName = browser.find_element(By.ID, 'lastName')
 lastName.clear()
 sleep(1)
-lastName.send_keys('Ivanovv')
+lastName.send_keys('Ivanov')
 birthdate = browser.find_element(By.ID, 'birthdate')
 birthdate.clear()
 sleep(1)

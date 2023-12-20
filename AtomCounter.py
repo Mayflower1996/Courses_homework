@@ -1,4 +1,4 @@
-# Задание "Из молекулы в атомы"
+# Задание 'Из молекулы в атомы'
 
 class AtomCounter:
     def __init__(self, formula):
@@ -50,8 +50,8 @@ class AtomCounter:
         return self.stack[0]
 
 
-if __name__ == "__main__":
-    formula = input("Введите формулу молекулы: ")
+if __name__ == '__main__':
+    formula = input('Введите формулу молекулы: ')
     counter = AtomCounter(formula)
     atoms = counter.count_atoms()
     print(atoms)
