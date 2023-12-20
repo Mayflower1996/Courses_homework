@@ -1,4 +1,4 @@
-"""Homework 21: Testing AtomCounter Class"""
+"""Homework 21: Testing AtomCounter Class."""
 
 import pytest
 from AtomCounter import AtomCounter
