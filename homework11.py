@@ -28,7 +28,7 @@ class Book:
             print(f"Книга '{self.name}' зарезервирована пользователем {user.name}")
 
     def cancel_reservation(self, user):
-        """Cancels the reservation of the book for a user."""
+        """Cancel the reservation of the book for a user."""
         if not self.reserved:
             print('У вас нет зарезервированных книг')
         elif self.user != user:
@@ -39,7 +39,7 @@ class Book:
             print(f"Резервирование книги '{self.name}' отменено")
 
     def borrow(self, user):
-        """Allows a user to borrow the book."""
+        """Allow a user to borrow the book."""
         if self.borrowed:
             print('Книга уже взята')
         elif self.reserved and self.user != user:
@@ -50,7 +50,7 @@ class Book:
             print(f"Книга '{self.name}' взята пользователем {user.name}")
 
     def return_book(self, user):
-        """Returns the book by a user."""
+        """Return the book by a user."""
         if not self.borrowed:
             print('У вас нет взятых книг')
         elif self.user != user:
@@ -63,6 +63,7 @@ class Book:
 
 class User:
     """Representing a user of the library."""
+
     def __init__(self, name):
         """Initialize a User object with a name."""
         self.name = name
@@ -154,6 +155,7 @@ while True:
 
 class Deposit:
     """Representing a bank deposit with interest calculation."""
+
     def __init__(self, amount, duration):
         """Initialize a Deposit object with amount and duration."""
         self.amount = amount
