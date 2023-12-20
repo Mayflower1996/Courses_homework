@@ -1,7 +1,19 @@
+"""
+Homework 10: Decorators and Caching
+"""
+
+
 # Задание 1 'Положительные аргументы функции':
 
 def validate_arguments(func):
+    """
+    Decorator to validate if arguments are positive integers.
+    """
+
     def wrapper(*args):
+        """
+        Wrapper function to validate arguments.
+        """
         for arg in args:
             if not isinstance(arg, int) or arg < 0:
                 raise ValueError('Ошибка! Аргумент должен быть положительным числом.')
@@ -12,6 +24,9 @@ def validate_arguments(func):
 
 @validate_arguments
 def calculate_sum(a, b):
+    """
+    Calculates the sum of two numbers.
+    """
     return a + b
 
 
@@ -21,7 +36,14 @@ result = calculate_sum(5, 10)
 # Задание 2 'Вернуть число':
 
 def check_result(func):
+    """
+    Decorator to check if function arguments and return value are numbers.
+    """
+
     def wrapper(*args):
+        """
+        Wrapper function to check arguments and return value.
+        """
         if not all(isinstance(arg, (int, float)) for arg in args):
             raise ValueError('Ошибка! Аргументы функции должны быть числами.')
 
@@ -36,6 +58,9 @@ def check_result(func):
 
 @check_result
 def add_numbers(a, b):
+    """
+    Adds two numbers.
+    """
     return a + b
 
 
@@ -43,11 +68,25 @@ result = add_numbers(10, 20)
 print(result)
 
 
+# result = add_numbers('10', '20')  # Ошибка, строковые аргументы
+
+
 # Задание 3 'Декоратор типов':
 
 def typed(type):
+    """
+    Decorator to enforce argument types for a function.
+    """
+
     def decorator(func):
+        """
+        Decorator function for enforcing argument types.
+        """
+
         def wrapper(*args):
+            """
+            Wrapper function to enforce argument types.
+            """
             new_args = []
             for arg in args:
                 if isinstance(arg, type):
@@ -66,6 +105,9 @@ def typed(type):
 
 @typed(type=str)
 def add_str(a, b):
+    """
+    Concatenates two strings.
+    """
     return a + b
 
 
@@ -73,8 +115,12 @@ result = add_str('3', '5')
 print(result)
 
 
+# Переименование функции add, чтобы избежать переопределения
 @typed(type=int)
 def add_int(a, b, c):
+    """
+    Adds three integers.
+    """
     return a + b + c
 
 
@@ -84,6 +130,9 @@ print(result)
 
 @typed(type=float)
 def add_float(a, b, c):
+    """
+    Adds three floating-point numbers.
+    """
     return a + b + c
 
 
@@ -96,13 +145,23 @@ cache_dict = {}
 
 
 def fibonacci(n):
+    """
+    Computes the Fibonacci sequence up to n.
+    """
     if n <= 1:
         return n
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 
 def cache(func):
+    """
+    Decorator to cache function results.
+    """
+
     def wrapper(n):
+        """
+        Wrapper function to check cache for results.
+        """
         if n in cache_dict:
             print(f'Значение {cache_dict[n]} было взято из кэша.')
         else:
@@ -115,6 +174,9 @@ def cache(func):
 
 @cache
 def fib(n):
+    """
+    Computes the nth Fibonacci number using caching.
+    """
     x = fibonacci(n)
     return x
 
