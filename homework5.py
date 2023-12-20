@@ -1,3 +1,5 @@
+"""Homework 5: String Operations."""
+
 # Задание 1
 # Заменить символ '#' на символ '/' в строке 'www.my_site.com#about'
 
