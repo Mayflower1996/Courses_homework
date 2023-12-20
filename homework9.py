@@ -1,6 +1,10 @@
+"""Homework 9: Recursive Functions."""
+
+
 # Задание 1 'Строки с заданным символом'
 
 def remove_previous_char(s):
+    """Remove the character '#' and the character preceding it recursively."""
     index = s.find('#')
     if index != -1:
         if index == 0:
@@ -20,6 +24,7 @@ print(remove_previous_char(string))
 # Задание 2 'Рекурсия'
 
 def countdown(n):
+    """Print numbers from n to 1, then from 1 to n using recursion."""
     if n < 1:
         print(n)
         countdown(n + 1)
