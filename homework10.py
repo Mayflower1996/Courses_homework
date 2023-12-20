@@ -95,6 +95,7 @@ result = add_float(0.1, 0.2, 0.4)
 print(result)
 
 cache_dict = {}
+"""cache_dict: Dict[int, int] = {}"""
 
 
 def fibonacci(n):
