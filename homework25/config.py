@@ -1,4 +1,4 @@
-URL = "https://thinking-tester-contact-list.herokuapp.com"
+URL = 'https://thinking-tester-contact-list.herokuapp.com'
 contact_payload = {
     'firstName': 'Ivan',
     'lastName': 'Ivanov',
