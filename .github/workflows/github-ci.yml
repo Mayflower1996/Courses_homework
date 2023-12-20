@@ -1,0 +1,35 @@
+name: Python Linting
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install flake8 flake8-quotes pydocstyle mypy
+
+    - name: Run flake8
+      run: |
+        flake8
+
+    - name: Run flake8-quotes
+      run: |
+        flake8 --select=Q0
+
+    - name: Run pydocstyle
+      run: |
+        pydocstyle
+
+    - name: Run mypy
+      run: |
+        mypy . --ignore-missing-imports
