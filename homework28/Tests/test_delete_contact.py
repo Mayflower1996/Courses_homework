@@ -6,7 +6,7 @@ def test_delete_existing_contact(create_contact_and_get_id):
     ID = create_contact_and_get_id
     response = requests.delete(f'{URL}/contacts/{ID}', headers=AUTH)
     assert response.status_code == 200
-    assert "deleted" in response.text
+    assert 'deleted' in response.text
 
 
 def test_delete_without_authentication(create_contact_and_get_id):

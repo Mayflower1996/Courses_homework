@@ -15,19 +15,19 @@ while True:
         print('Invalid input. Please enter a single word.')
         continue
     elif word.endswith('ing'):
-        print('The word already ends with \'ing\'')
+        print("The word already ends with 'ing'")
         break
     elif word.endswith('e'):
         word_with_ing = word[:-1] + 'ing'
-        print('Word with added \'ing\':', word_with_ing)
+        print("Word with added 'ing':", word_with_ing)
         break
     elif len(word) >= 2 and word[-3:] not in ['ing', 'e'] and word[-2:] not in ['ie']:
         word_with_ing = word + 'ing'
-        print('Word with added \'ing\':', word_with_ing)
+        print("Word with added 'ing':", word_with_ing)
         break
     else:
         word_with_ing = word
-        print('Word with added \'ing\':', word_with_ing)
+        print("Word with added 'ing':", word_with_ing)
         break
 
 

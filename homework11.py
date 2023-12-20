@@ -18,7 +18,7 @@ class Book:
         else:
             self.reserved = True
             self.user = user
-            print(f'Книга \'{self.name}\' зарезервирована пользователем {user.name}')
+            print(f"Книга '{self.name}' зарезервирована пользователем {user.name}")
 
     def cancel_reservation(self, user):
         if not self.reserved:
@@ -28,7 +28,7 @@ class Book:
         else:
             self.reserved = False
             self.user = None
-            print(f'Резервирование книги \'{self.name}\' отменено')
+            print(f"Резервирование книги '{self.name}' отменено")
 
     def borrow(self, user):
         if self.borrowed:
@@ -38,7 +38,7 @@ class Book:
         else:
             self.borrowed = True
             self.user = user
-            print(f'Книга \'{self.name}\' взята пользователем {user.name}')
+            print(f"Книга '{self.name}' взята пользователем {user.name}")
 
     def return_book(self, user):
         if not self.borrowed:
@@ -48,7 +48,7 @@ class Book:
         else:
             self.borrowed = False
             self.user = None
-            print(f'Книга \'{self.name}\' возвращена')
+            print(f"Книга '{self.name}' возвращена")
 
 
 class User:
