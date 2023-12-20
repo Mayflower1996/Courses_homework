@@ -1,17 +1,20 @@
 """Data module containing login payload information."""
 
 
-payload = {
-  'email': 'jjgraffity@gmail.com',
-  'password': 'Vania1996123qwe'
-}
+class PayloadLogin:
+    """Class containing different payloads related to log in functionality."""
 
-invalid_payload = {
-        'email': 'nonexistent@example.com',
-        'password': 'invalidPassword123'
-}
+    payload = {
+      'email': 'jjgraffity@gmail.com',
+      'password': 'Vania1996123qwe'
+    }
 
-empty_payload = {
-        'email': '',
-        'password': ''
-}
+    invalid_payload = {
+            'email': 'nonexistent@example.com',
+            'password': 'invalidPassword123'
+    }
+
+    empty_payload = {
+            'email': '',
+            'password': ''
+    }
