@@ -1,7 +1,12 @@
+"""Homework 11: Library & Deposit"""
+
+
 # Задание 1 'Библиотека':
 
 class Book:
+    """Represents a book with reservation and borrowing functionality."""
     def __init__(self, name, author, pages, isbn):
+        """Initializes a Book object with name, author, pages, and isbn."""
         self.name = name
         self.author = author
         self.pages = pages
@@ -11,6 +16,7 @@ class Book:
         self.user = None
 
     def reserve(self, user):
+        """Reserves the book for a user."""
         if self.borrowed:
             print('Книга уже взята другим пользователем')
         elif self.reserved:
@@ -21,6 +27,7 @@ class Book:
             print(f"Книга '{self.name}' зарезервирована пользователем {user.name}")
 
     def cancel_reservation(self, user):
+        """Cancels the reservation of the book for a user."""
         if not self.reserved:
             print('У вас нет зарезервированных книг')
         elif self.user != user:
@@ -31,6 +38,7 @@ class Book:
             print(f"Резервирование книги '{self.name}' отменено")
 
     def borrow(self, user):
+        """Allows a user to borrow the book."""
         if self.borrowed:
             print('Книга уже взята')
         elif self.reserved and self.user != user:
@@ -41,6 +49,7 @@ class Book:
             print(f"Книга '{self.name}' взята пользователем {user.name}")
 
     def return_book(self, user):
+        """Returns the book by a user."""
         if not self.borrowed:
             print('У вас нет взятых книг')
         elif self.user != user:
@@ -52,10 +61,13 @@ class Book:
 
 
 class User:
+    """Represents a user of the library."""
     def __init__(self, name):
+        """Initializes a User object with a name."""
         self.name = name
 
     def change_user(self, new_user):
+        """Changes the current user."""
         global current_user
         current_user = new_user
 
@@ -140,11 +152,14 @@ while True:
 # Задание 2 'Банковский вклад':
 
 class Deposit:
+    """Represents a bank deposit with interest calculation."""
     def __init__(self, amount, duration):
+        """Initializes a Deposit object with amount and duration."""
         self.amount = amount
         self.duration = duration
 
     def calculate_interest(self):
+        """Calculates the total amount with interest."""
         monthly_interest_rate = 0.1 / 12
         total_amount = self.amount
         for _ in range(self.duration * 12):
@@ -153,8 +168,10 @@ class Deposit:
 
 
 class Bank:
+    """Represents a bank where a user can make deposits."""
     @staticmethod
     def deposit():
+        """Accepts user input for deposit amount and duration."""
         amount = float(input('Введите сумму: '))
         duration = int(input('Введите срок (в годах): '))
         deposit = Deposit(amount, duration)
