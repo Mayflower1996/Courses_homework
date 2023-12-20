@@ -2,12 +2,14 @@
 Homework 10: Decorators and Caching.
 """
 
+
 # Задание 1 'Положительные аргументы функции':
 
 def validate_arguments(func):
     """
     Decorate to validate if arguments are positive integers.
     """
+
     def wrapper(*args):
         """
         Validate arguments.
@@ -16,6 +18,7 @@ def validate_arguments(func):
             if not isinstance(arg, int) or arg < 0:
                 raise ValueError('Ошибка! Аргумент должен быть положительным числом.')
         return func(*args)
+
     return wrapper
 
 
@@ -36,6 +39,7 @@ def check_result(func):
     """
     Decorate to check if function arguments and return value are numbers.
     """
+
     def wrapper(*args):
         """
         Check arguments and return value.
@@ -48,6 +52,7 @@ def check_result(func):
             raise ValueError('Ошибка! Результат функции не является числом.')
 
         return result
+
     return wrapper
 
 
@@ -61,6 +66,8 @@ def add_numbers(a, b):
 
 result = add_numbers(10, 20)
 print(result)
+
+
 # result = add_numbers('10', '20')  # Ошибка, строковые аргументы
 
 
@@ -70,10 +77,12 @@ def typed(type):
     """
     Decorate to enforce argument types for a function.
     """
+
     def decorator(func):
         """
         Decorator function for enforcing argument types.
         """
+
         def wrapper(*args):
             """
             Enforce argument types.
@@ -88,7 +97,9 @@ def typed(type):
                     except ValueError:
                         raise TypeError(f'Аргумент {arg} невозможно привести к типу {type}')
             return func(*new_args)
+
         return wrapper
+
     return decorator
 
 
@@ -127,7 +138,6 @@ def add_float(a, b, c):
 result = add_float(0.1, 0.2, 0.4)
 print(result)
 
-
 # Задание 4 'Функция кэширования*':
 
 cache_dict = {}
@@ -146,6 +156,7 @@ def cache(func):
     """
     Decorate to cache function results.
     """
+
     def wrapper(n):
         """
         Check cache for results.
@@ -156,6 +167,7 @@ def cache(func):
             result = func(n)
             cache_dict[n] = result
             print(f'Значение {cache_dict[n]} было добавлено в кэш.')
+
     return wrapper
 
 
