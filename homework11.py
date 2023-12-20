@@ -4,10 +4,10 @@
 # Задание 1 'Библиотека':
 
 class Book:
-    """Represents a book with reservation and borrowing functionality."""
+    """Representing a book with reservation and borrowing functionalities."""
 
     def __init__(self, name, author, pages, isbn):
-        """Initializes a Book object with name, author, pages, and isbn."""
+        """Initialize a Book object with name, author, pages, and isbn."""
         self.name = name
         self.author = author
         self.pages = pages
@@ -62,13 +62,13 @@ class Book:
 
 
 class User:
-    """Represents a user of the library."""
+    """Representing a user of the library."""
     def __init__(self, name):
-        """Initializes a User object with a name."""
+        """Initialize a User object with a name."""
         self.name = name
 
     def change_user(self, new_user):
-        """Changes the current user."""
+        """Change the current user."""
         global current_user
         current_user = new_user
 
@@ -153,14 +153,14 @@ while True:
 # Задание 2 'Банковский вклад':
 
 class Deposit:
-    """Represents a bank deposit with interest calculation."""
+    """Representing a bank deposit with interest calculation."""
     def __init__(self, amount, duration):
-        """Initializes a Deposit object with amount and duration."""
+        """Initialize a Deposit object with amount and duration."""
         self.amount = amount
         self.duration = duration
 
     def calculate_interest(self):
-        """Calculates the total amount with interest."""
+        """Calculate the total amount with interest."""
         monthly_interest_rate = 0.1 / 12
         total_amount = self.amount
         for _ in range(self.duration * 12):
@@ -169,10 +169,10 @@ class Deposit:
 
 
 class Bank:
-    """Represents a bank where a user can make deposits."""
+    """Representing a bank where a user can make deposits."""
     @staticmethod
     def deposit():
-        """Accepts user input for deposit amount and duration."""
+        """Accept user input for deposit amount and duration."""
         amount = float(input('Введите сумму: '))
         duration = int(input('Введите срок (в годах): '))
         deposit = Deposit(amount, duration)
