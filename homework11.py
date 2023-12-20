@@ -172,6 +172,7 @@ class Deposit:
 
 class Bank:
     """Representing a bank where a user can make deposits."""
+
     @staticmethod
     def deposit():
         """Accept user input for deposit amount and duration."""

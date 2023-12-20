@@ -1,12 +1,19 @@
+"""AtomCounter module."""
+
+
 # Задание 'Из молекулы в атомы'
 
 class AtomCounter:
+    """Class to count atoms in a molecule formula."""
+
     def __init__(self, formula):
+        """Initialize AtomCounter with a given formula."""
         self.formula = formula
         self.stack = [{}]
         self.i = 0
 
     def handle_atom(self):
+        """Handle atoms in the formula."""
         atom = self.formula[self.i]
         self.i += 1
         while self.i < len(self.formula) and self.formula[self.i].islower():
@@ -22,6 +29,7 @@ class AtomCounter:
             self.stack[-1][atom] = self.stack[-1].get(atom, 0) + 1
 
     def count_atoms(self):
+        """Count atoms in the given formula."""
         while self.i < len(self.formula):
             if self.formula[self.i].isupper():
                 self.handle_atom()

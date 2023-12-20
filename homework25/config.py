@@ -1,3 +1,10 @@
+"""
+Configuration File for Website Automation
+
+This module contains configurations used in the automation script.
+"""
+
+
 URL = 'https://thinking-tester-contact-list.herokuapp.com'
 contact_payload = {
     'firstName': 'Ivan',

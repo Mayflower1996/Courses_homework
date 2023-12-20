@@ -1,6 +1,10 @@
+"""Homework 8: Card Number Validation and String Compression."""
+
+
 # Задание 1 'Validate':
 
 def validate(card_number):
+    """Validate a card number using the Luhn algorithm."""
     if not card_number.isdigit():
         return False
 
@@ -43,6 +47,7 @@ while True:
 # Задание 2 'Подсчет количества букв'
 
 def compress_string(string):
+    """Compress a string by counting consecutive characters."""
     compressed = ''
     count = 1
     for i in range(len(string)):

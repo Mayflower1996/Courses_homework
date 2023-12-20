@@ -1,3 +1,6 @@
+"""Data module containing payloads for updating contacts."""
+
+
 CORRECT_PAYLOAD_UPDATE = {
     'firstName': 'Ivans',
     'lastName': 'Ivanovs',

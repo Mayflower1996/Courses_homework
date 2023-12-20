@@ -1,3 +1,10 @@
+"""
+Flask App for Random Cat Images
+
+This Flask application generates a random cat image from a list of images when accessed via the root URL.
+"""
+
+
 from flask import Flask, render_template
 import random
 
@@ -13,6 +20,12 @@ images = [
 
 @app.route('/')
 def index():
+    """
+    Generate a random cat image URL.
+
+    Returns:
+        str: URL of a randomly selected cat image.
+    """
     url = random.choice(images)
     return render_template('index.html', url=url)
 

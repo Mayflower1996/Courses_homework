@@ -1,3 +1,6 @@
+"""Data module containing schemas for validating data."""
+
+
 SCHEMA_CREATE_CONTACT = {
     'type': 'object',
     'properties': {

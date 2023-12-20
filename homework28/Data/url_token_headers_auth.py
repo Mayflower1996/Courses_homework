@@ -1,3 +1,6 @@
+"""Module containing URL, headers, and authentication details."""
+
+
 import requests
 from payload_login_pass import payload
 

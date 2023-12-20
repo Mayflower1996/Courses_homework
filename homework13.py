@@ -1,3 +1,6 @@
+"""Homework 13: Regular Expressions, Password Validation, Iterator, and Generator."""
+
+
 import re
 import os
 
@@ -7,6 +10,7 @@ import os
 
 
 def find_dates(file_path):
+    """Find and prints dates in the format 'dd.mm.yyyy' from a file or directory."""
     pattern = r'\d{2}\.\d{2}\.\d{4}\b'
 
     if os.path.isdir(file_path):
@@ -42,6 +46,7 @@ find_dates(file_path)
 # включает хотя бы одну заглавную букву, одну строчную букву и одну цифру.
 
 def check_password(password):
+    """Check the correctness of a password."""
     if len(password) < 8:
         return False
     if not re.search('[A-Z]', password) or not re.search('[a-z]', password) or not re.search('[0-9]', password):
@@ -78,6 +83,7 @@ print(fixed_sentence)
 # простых чисел из этого диапазона.
 
 def generate_numbers(N):
+    """Generate numbers from 1 to N and prints their sum."""
     if N <= 0:
         raise ValueError('N должно быть положительным целым числом')
     for i in range(1, N + 1):
@@ -94,6 +100,7 @@ except ValueError as e:
 
 
 def generate_prime_numbers(start, end):
+    """Generate and prints the first 10 prime numbers within the specified range."""
     if start < 2:
         raise ValueError('Начало диапазона должно быть не меньше 2')
     if end < start:
