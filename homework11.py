@@ -1,10 +1,11 @@
-"""Homework 11: Library & Deposit"""
+"""Homework 11: Library & Deposit."""
 
 
 # Задание 1 'Библиотека':
 
 class Book:
     """Represents a book with reservation and borrowing functionality."""
+
     def __init__(self, name, author, pages, isbn):
         """Initializes a Book object with name, author, pages, and isbn."""
         self.name = name
