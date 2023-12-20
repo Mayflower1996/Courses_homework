@@ -1,6 +1,9 @@
 """Homework 10: Decorators and Caching."""
 
 
+from typing import Dict
+
+
 def validate_arguments(func):
     """Validate if arguments are positive integers."""
 
@@ -94,8 +97,7 @@ def add_float(a, b, c):
 result = add_float(0.1, 0.2, 0.4)
 print(result)
 
-cache_dict = {}
-"""cache_dict: Dict[int, int] = {}"""
+cache_dict: Dict[int, int] = {}
 
 
 def fibonacci(n):
