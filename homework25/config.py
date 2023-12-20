@@ -1,5 +1,5 @@
 """
-Configuration File for Website Automation
+Configuration File for Website Automation.
 
 This module contains configurations used in the automation script.
 """

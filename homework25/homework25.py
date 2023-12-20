@@ -1,5 +1,5 @@
 """
-Automation Script for Website Interactions
+Automation Script for Website Interactions.
 
 This script automates interactions with a website using Selenium.
 """

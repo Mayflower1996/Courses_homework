@@ -1,5 +1,5 @@
 """
-Flask App for Random Cat Images
+Flask App for Random Cat Images.
 
 This Flask application generates a random cat image from a list of images when accessed via the root URL.
 """
