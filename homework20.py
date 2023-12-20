@@ -1,9 +1,14 @@
+"""Homework 20: Unit Testing with unittest."""
+
 import unittest
 from AtomCounter import AtomCounter
 
 
 class TestAtomCounter(unittest.TestCase):
+    """Test cases for the AtomCounter class."""
+
     def test_count_atoms_positive(self):
+        """Test cases for counting atoms in various molecular formulas."""
         # Test a simple molecular formula
         formula = 'H2O'
         counter = AtomCounter(formula)
@@ -23,6 +28,7 @@ class TestAtomCounter(unittest.TestCase):
         self.assertEqual(counter.count_atoms(), expected_atoms)
 
     def test_count_atoms_negative(self):
+        """Test cases for handling invalid molecular formulas."""
         # Test an invalid formula with missing closing parenthesis
         formula = 'Na3(Fe(CN)6'
         counter = AtomCounter(formula)
