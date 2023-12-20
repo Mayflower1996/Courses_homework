@@ -15,7 +15,7 @@ def calculate_sum(a, b):
     return a + b
 
 
-result = calculate_sum(5, -10)
+result = calculate_sum(5, 10)
 
 
 # Задание 2 'Вернуть число':
@@ -23,13 +23,13 @@ result = calculate_sum(5, -10)
 def check_result(func):
     def wrapper(*args):
         if not all(isinstance(arg, (int, float)) for arg in args):
-            print('Ошибка! Аргументы функции должны быть числами.')
-        else:
-            result = func(*args)
-            if not isinstance(result, (int, float)):
-                print('Ошибка! Результат функции не является числом.')
-            else:
-                return result
+            raise ValueError('Ошибка! Аргументы функции должны быть числами.')
+
+        result = func(*args)
+        if not isinstance(result, (int, float)):
+            raise ValueError('Ошибка! Результат функции не является числом.')
+
+        return result
 
     return wrapper
 
@@ -41,7 +41,6 @@ def add_numbers(a, b):
 
 result = add_numbers(10, 20)
 print(result)
-result = add_numbers('10', '20')
 
 
 # Задание 3 'Декоратор типов':
@@ -66,37 +65,30 @@ def typed(type):
 
 
 @typed(type=str)
-def add(a, b):
+def add_str(a, b):
     return a + b
 
 
-result = add('3', 5)
-print(result)
-
-result = add(5, 5)
-print(result)
-
-result = add('a', 'b')
+result = add_str('3', '5')
 print(result)
 
 
 @typed(type=int)
-def add(a, b, c):
+def add_int(a, b, c):
     return a + b + c
 
 
-result = add('5', 6.0, 7)
+result = add_int(5, 6, 7)
 print(result)
 
 
 @typed(type=float)
-def add(a, b, c):
+def add_float(a, b, c):
     return a + b + c
 
 
-result = add('0.1', 0.2, 0.4)
+result = add_float(0.1, 0.2, 0.4)
 print(result)
-
 
 # Задание 4 'Функция кэширования*':
 
